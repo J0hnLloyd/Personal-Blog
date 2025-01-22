@@ -1,0 +1,177 @@
+/* 
+  I set universal styles for the body, h1, p, form, label, input, and button elements to ensure consistent spacing and box-sizing throughout the 
+  page...
+*/
+body, h1, p, form, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-image: url('/Frontend/images/clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 
+  For the login container, I added a semi-transparent white background, rounded corners, and a subtle box shadow 
+  to make it stand out on the background. The width adjusts responsively up to a maximum of 400px...
+*/
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* 
+  The header includes a main heading styled for emphasis and a secondary highlight with italics...
+*/
+.login-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.login-header .highlight {
+    color: #333;
+    font-style: italic;
+}
+
+/* 
+  I styled the subtext paragraph below the header to have a smaller font and subtle color for contrast...
+*/
+.login-header p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* 
+  The form section uses Flexbox to stack form elements with consistent spacing between them...
+*/
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 
+  Each form group contains a label and input styled with spacing for clarity and alignment...
+*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+/* 
+  Labels are styled with a smaller font size to pair well with inputs...
+*/
+label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+
+/* 
+  Inputs have a clean, minimal design with padding and rounded corners...
+  I added a transition effect for a smooth border color change when focused...
+*/
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #5b5e61;
+}
+
+/* 
+  Buttons are styled with a bold black background, white text, and hover effects for interactivity...
+*/
+button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333333;
+}
+
+/* 
+  For the footer, I added subtle text styling and hover effects on links for better interactivity...
+*/
+.login-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-footer a {
+    color: #0056b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+    color: #003f8c;
+}
+
+/* 
+  I added a class for buttons that should retain link styles, ensuring they appear consistent with normal text links...
+*/
+.login-button {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+/* 
+  Media query for smaller devices (Mobile Devices) by adjusting padding and font sizes...
+*/
+@media only screen and (max-width: 425px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .login-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .login-header p {
+        font-size: 0.9rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+}
