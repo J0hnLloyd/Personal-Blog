@@ -1,0 +1,172 @@
+/* 
+  I applied universal styles for the body, h1, p, form, label, input, and button elements to eliminate default spacing 
+  and ensure consistent sizing using the border-box model...
+*/
+body, h1, p, form, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+  For the body, I used a centered Flexbox layout, setting a background image that covers the viewport entirely 
+  while aligning the content centrally both horizontally and vertically...
+*/
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-image: url('/Frontend/images/clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 
+  The signup container has a semi-transparent background, rounded corners, and a box shadow to distinguish it from 
+  the background. It’s centered and constrained to a responsive max-width of 400px...
+*/
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* 
+  The header features a large heading for the title, a subtle highlighted element, and a descriptive paragraph 
+  below it. I styled the highlight with italics and a slightly darker color...
+*/
+.signup-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.signup-header .highlight {
+    color: #333;
+    font-style: italic;
+}
+
+.signup-header p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* 
+  I arranged the signup form elements in a vertical stack using Flexbox with consistent spacing...
+*/
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* 
+  Each form group consists of a label and its corresponding input, styled with spacing to maintain readability.
+*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+/* 
+  Labels are small and color-coordinated with the overall theme for better visual hierarchy...
+*/
+label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* 
+  Inputs have a clean, minimal design with padding, rounded corners, and a transition effect 
+  for the border color when focused...
+*/
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #5b5e61;
+}
+
+/* 
+  Buttons are styled with a dark background, white text, and smooth hover transitions for interactivity...
+*/
+button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333333;
+}
+
+/* 
+  The footer contains subtle text and links with hover effects for better engagement. 
+  The links change color slightly on hover for a more dynamic feel...
+*/
+.signup-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.signup-footer a {
+    color: #0056b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signup-footer a:hover {
+    color: #003f8c;
+}
+
+/* 
+  I made a media query to adjust the layout for smaller devices (Mobile Devices), reducing padding 
+  and font sizes to fit smaller screens while maintaining readability...
+*/
+@media only screen and (max-width: 425px) {
+    .signup-container {
+        padding: 1.5rem;
+    }
+
+    .signup-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .signup-header p {
+        font-size: 0.9rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+}
