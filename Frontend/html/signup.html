@@ -56,7 +56,7 @@
                 if (response.ok) {
                     alert('Sign Up successful!');
                     localStorage.setItem('token', data.token);
-                    window.location.href = '/Frontend/html/login.html'; // Redirect after signup
+                    window.location.href = '/login.html'; // Redirect after signup
                 } else {
                     alert(data.message || 'Sign Up failed');
                 }
