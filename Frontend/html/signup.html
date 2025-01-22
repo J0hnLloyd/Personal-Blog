@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Narezano</title>
+    <link rel="stylesheet" href="/Frontend/StyleSheets/signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <header class="signup-header">
+            <h1>Join <span class="highlight">Narezano</span></h1>
+            <p>Create an account to get started.</p>
+        </header>
+
+        <main class="signup-main">
+            <form class="signup-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Choose an email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+
+            <div class="signup-footer">
+                <p>Already have an account? <a href="/login.html">Log In</a></p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.querySelector('.signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;  // Get the name value
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:3100/api/user/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password }), // Include name in the request
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Sign Up successful!');
+                    localStorage.setItem('token', data.token);
+                    window.location.href = '/Frontend/html/login.html'; // Redirect after signup
+                } else {
+                    alert(data.message || 'Sign Up failed');
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
