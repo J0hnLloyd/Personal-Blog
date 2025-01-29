@@ -39,20 +39,20 @@
     <script>
         document.querySelector('.signup-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-
+    
             const name = document.getElementById('name').value;  // Get the name value
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-
+    
             try {
-                const response = await fetch('http://localhost:4500/api/user/signup', {
+                const response = await fetch('/api/signup', { // Updated to point to serverless function
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, password }), // Include name in the request
                 });
-
+    
                 const data = await response.json();
-
+    
                 if (response.ok) {
                     alert('Sign Up successful!');
                     localStorage.setItem('token', data.token);
