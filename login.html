@@ -40,7 +40,7 @@
             const password = document.getElementById('password').value;
     
             try {
-                const response = await fetch('/Backend/api/login', {
+                const response = await fetch('http://localhost:4500/api/user/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password }),
@@ -50,8 +50,9 @@
     
                 if (response.ok) {
                     alert('Login successful!');
+                    // Optionally save the token to localStorage
                     localStorage.setItem('token', data.token);
-                    window.location.href = '/index.html'; 
+                    window.location.href = '/index.html'; // Redirect after login
                 } else {
                     alert(data.message || 'Login failed');
                 }
