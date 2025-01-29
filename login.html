@@ -40,7 +40,7 @@
             const password = document.getElementById('password').value;
     
             try {
-                const response = await fetch('Backend\api\signup.js', {
+                const response = await fetch('/Backend/api/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password }),
